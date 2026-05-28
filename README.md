@@ -6,6 +6,9 @@
 Built for the **Pirates of the Coral-bean Hackathon** by WeMakeDevs.
 <img width="955" height="440" alt="StudyMate" src="https://github.com/user-attachments/assets/78157b42-9120-49cb-bc98-236e1eb9d199" />
 
+## 🎥 Demo Video
+👉 [Watch StudyMate in action](https://www.loom.com/share/a0f1353d38ce45b1989f4ed9a62f4081)
+
 
 ---
 
