@@ -1,48 +1,84 @@
-\# 📚 StudyMate - AI Study Planner
+
+# 📚 StudyMate - AI Study Planner
+
+> Stop guessing what to study. Let AI figure it out for you.
+
+Built for the **Pirates of the Coral-bean Hackathon** by WeMakeDevs.
+<img width="955" height="440" alt="StudyMate" src="https://github.com/user-attachments/assets/78157b42-9120-49cb-bc98-236e1eb9d199" />
 
 
+---
 
-An AI-powered study assistant built for the Pirates of the Coral-bean Hackathon by WeMakeDevs.
+## 🎯 Problem It Solves
+Students waste time figuring out what to study.
+StudyMate reads your actual calendar and notes
+and tells you exactly what to focus on — automatically.
 
+---
 
+## 🚀 What It Does
+- 📅 Reads your Google Calendar events and deadlines
+- 📝 Reads your Notion notes and assignments
+- 🤖 Uses Groq AI to generate a personalized 7-day study plan
+- 🎨 Beautiful web UI built with Streamlit
 
-\## 🚀 What it does
+---
 
-\- Reads your Google Calendar events and deadlines
+## 🏗️ How It Works
 
-\- Reads your Notion notes and assignments
+```
+Google Calendar + Notion
+         ↓
+      Coral SQL
+         ↓
+    Python Agent
+         ↓
+   Groq (Llama 3.3)
+         ↓
+  📚 Personalized Study Plan
+```
 
-\- Uses Groq AI to generate a personalized 7-day study plan
+---
 
+## 🌟 Why Coral?
+Without Coral, I'd need separate API integrations
+for Calendar and Notion. Coral lets me query both
+with simple SQL — saving hours of setup.
 
+---
 
-\## 🛠️ Tech Stack
+## 🛠️ Tech Stack
+| Tool | Purpose |
+|------|---------|
+| Coral SQL | Query Google Calendar & Notion |
+| Groq AI (Llama 3.3) | Generate study plans |
+| Streamlit | Web interface |
+| Python | Backend logic |
 
-\- Coral SQL - connects to Google Calendar \& Notion
+---
 
-\- Groq AI (Llama 3.3) - generates study plans
+## ⚙️ Setup
+1. Install Coral: https://docs.coral.dev
+2. Connect sources:
+```
+coral source add google_calendar
+coral source add notion
+```
+3. Create `.env` file:
+```
+GROQ_API_KEY=your_key_here
+```
+4. Install dependencies:
+```
+pip install streamlit groq python-dotenv
+```
+5. Run:
+```
+streamlit run app.py
+```
 
-\- Streamlit - web interface
+---
 
-\- Python
-
-
-
-\## ⚙️ Setup
-
-1\. Install Coral: https://docs.coral.dev
-
-2\. Connect sources: `coral source add google\_calendar` and `coral source add notion`
-
-3\. Create `.env` file with your `GROQ\_API\_KEY`
-
-4\. Install dependencies: `pip install streamlit groq python-dotenv`
-
-5\. Run: `streamlit run app.py`
-
-
-
-\## 👩‍💻 Built by
-
-Bibi Jahera Shaik
-
+## 👩‍💻 Built by
+**Bibi Jahera Shaik**
+Pirates of the Coral-bean Hackathon · WeMakeDevs
