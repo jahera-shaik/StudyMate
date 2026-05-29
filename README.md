@@ -61,7 +61,7 @@ with simple SQL — saving hours of setup.
 ---
 
 ## ⚙️ Setup
-1. Install Coral: https://docs.coral.dev
+1. Install Coral: https://withcoral.com/docs
 2. Connect sources:
 ```
 coral source add google_calendar
