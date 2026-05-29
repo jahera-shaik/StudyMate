@@ -1,6 +1,7 @@
 import streamlit as st
 import subprocess
 import os
+import markdown
 from groq import Groq
 from dotenv import load_dotenv
 
@@ -24,6 +25,10 @@ st.markdown("""
 .card-sub { color: rgba(255,255,255,0.5); font-size: 0.82rem; }
 .stButton>button { background: linear-gradient(90deg, #00d4ff, #0099cc); color: #0a0e2a !important; border: none !important; border-radius: 50px !important; padding: 16px 40px !important; font-size: 1.05rem !important; font-weight: 700 !important; width: 100% !important; box-shadow: 0 4px 20px rgba(0,212,255,0.4) !important; }
 .output-box { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(0,212,255,0.25); border-radius: 20px; padding: 35px; color: rgba(255,255,255,0.9) !important; line-height: 1.9; box-shadow: 0 8px 32px rgba(0,0,0,0.3); font-size: 0.95rem; }
+.output-box p { color: rgba(255,255,255,0.9) !important; }
+.output-box li { color: rgba(255,255,255,0.9) !important; }
+.output-box strong { color: #00d4ff !important; }
+.output-box h1, .output-box h2, .output-box h3 { color: #00d4ff !important; }
 .divider { border: none; height: 1px; background: linear-gradient(90deg, transparent, rgba(0,212,255,0.3), transparent); margin: 30px 0; }
 .footer { text-align: center; color: rgba(255,255,255,0.3); font-size: 0.78rem; padding: 20px 0 30px; }
 #MainMenu {visibility: hidden;} footer {visibility: hidden;} header {visibility: hidden;}
@@ -67,10 +72,9 @@ with col_center:
     if st.button("🚀 Generate My Study Plan"):
         with st.spinner("✨ Reading your calendar & notes..."):
             plan = get_study_plan()
+        plan_html = markdown.markdown(plan)
+        st.markdown(f"<div class='output-box'>{plan_html}</div>", unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
-        st.markdown("<div class='output-box'>", unsafe_allow_html=True)
-        st.markdown(plan)
-        st.markdown("</div>", unsafe_allow_html=True)
         st.download_button(
             label="📥 Download My Study Plan",
             data=plan,
