@@ -68,7 +68,17 @@ with col_center:
         with st.spinner("✨ Reading your calendar & notes..."):
             plan = get_study_plan()
         st.markdown("<br>", unsafe_allow_html=True)
-        st.markdown(f"<div class='output-box'>{plan.replace(chr(10), '<br>')}</div>", unsafe_allow_html=True)
+        st.markdown("<div class='output-box'>", unsafe_allow_html=True)
+        st.markdown(plan)
+        st.markdown("</div>", unsafe_allow_html=True)
+        st.download_button(
+            label="📥 Download My Study Plan",
+            data=plan,
+            file_name="study_plan.txt",
+            mime="text/plain"
+        )
+        if st.button("🔄 Regenerate Plan"):
+            st.rerun()
 
 st.markdown("<hr class='divider'>", unsafe_allow_html=True)
 st.markdown("<div class='footer'>Built for Pirates of the Coral-bean Hackathon · WeMakeDevs &nbsp;|&nbsp; By Bibi Jahera Shaik</div>", unsafe_allow_html=True)
